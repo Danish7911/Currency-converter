@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      href="/Currency Converter/Assest/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+    <style>
+      body{
+          background: radial-gradient(circle at top right, #1a1a1a, #ffffff);
+      }
+      .glass-card { 
+          backdrop-filter: blur(10px); 
+          background: rgba(255, 255, 255, 0.31); 
+      }
+      .currency-bg {
+          background: linear-gradient(120deg, #cd76ff 0%, #6d179e 100%); 
+      }
+      .glow { 
+          box-shadow: 0 0 30px rgba(205, 101, 243, 0.3); 
+      }
+      .hover-scale:hover { 
+          transform: scale(1.02); 
+          transition: transform 0.3s ease; 
+      }
+  </style>
+</head>
+<body class=" d-flex align-items-center py-5">
+  
+      <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+              <div class="card border-0 rounded-4 glass-card glow hover-scale">                    
+                  <div class="card-body p-4 p-lg-5">
+                      <div class="text-center mb-5">
+                          <h1 class="display-4 text-primary fw-bold mb-2 d-flex align-items-center justify-content-center  header" >
+                              <i class="fas fa-globe-americas me-2" style="color:#591481;"></i> <h1 style="color:#591481;">Exchange</h1>
+                          </h1>
+                          <p class="text-muted lead">Real-time currency conversion</p>
+                      </div>
+                      <div class="mb-4 position-relative">
+                          <div class="input-group input-group-lg">
+                              <span class="input-group-text border-0 currency-bg text-white">
+                                  <i class="fas fa-coins"></i>
+                              </span>
+                              <input type="number" id="amount" class="form-control form-control-lg border-0 shadow-none" placeholder="Enter amount" value="1">
+                          </div>
+                      </div>
+                      <div class="row g-4 mb-4">
+                          <div class="col-6">
+                              <select id="fromCurrency" class="form-select form-select-lg border-0">
+                                  <option value="">Loading...</option>
+                              </select>
+                          </div>
+                          <div class="col-6">
+                              <select id="toCurrency" class="form-select form-select-lg border-0">
+                                  <option value="">Loading...</option>
+                              </select>
+                          </div>
+                      </div>
+                      <button id="convertBtn" class="btn btn-lg w-100 mb-4 text-white currency-bg hover-scale">
+                          <i class="fas fa-exchange-alt me-2"></i>Convert
+                      </button>
+                      <div id="result" class="p-4 rounded-4 text-center d-none position-relative overflow-hidden">
+                          <h3 class="conversion-result mb-2 fw-bold"></h3>
+                          <p class="text-muted mb-0 small">Updated: <span id="updateTime"></span></p>
+                      </div>
+                      <div id="loading" class="text-center d-none">
+                          <div class="spinner-border text-primary" role="status"></div>
+                      </div>
+                      <div id="error" class="alert alert-danger d-none"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="codes.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
